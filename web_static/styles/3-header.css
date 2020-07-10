@@ -1,0 +1,14 @@
+/* 0x01. AirBnB clone - Web static, task 3. Zoning done! */
+
+header {
+    height: 70px;
+    width: 100%;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #CCCCCC;
+    background-color: white;
+    background-image: url("../images/logo.png");
+    background-repeat: no-repeat;
+    background-attachment: local;
+    background-position: 20px 50%;
+}
