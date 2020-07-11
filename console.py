@@ -44,6 +44,7 @@ class HBNBCommand(cmd.Cmd):
                     params[2] = params[2].split(', ')
                 for i, arg in enumerate(params[2]):
                     params[2][i] = arg.strip('"')
+                print(params)
                 if params[1] == 'all':
                     self.do_all(params[0])
                 elif params[1] == 'count':
@@ -57,20 +58,19 @@ class HBNBCommand(cmd.Cmd):
                 elif params[1] == 'destroy':
                     self.do_destroy(params[0] + ' ' + ' '.join(params[2]))
                 elif params[1] == 'update':
-                    try:
+                    if '{' in params[2] and '}' in params[2]:
                         dict_arg = eval(params[2][1])
-                    except:
-                        return
-                    if type(dict_arg) == dict:
-                        for key, value in dict_arg.items():
-                            # <class> <id> <attr name> <attr value>
-                            update_line = ' '.join((params[0],
-                                                    params[2][0],
-                                                    key, str(value)))
-                            self.do_update(update_line)
+                        if type(dict_arg) == dict:
+                            for key, value in dict_arg.items():
+                                # <class> <id> <attr name> <attr value>
+                                update_line = ' '.join((params[0],
+                                                        params[2][0],
+                                                        key, str(value)))
+                                self.do_update(update_line)
                     else:
                         update_line = (params[0] + ' ' +
                                        ' '.join(params[2]))
+                        print(update_line)
                         self.do_update(update_line)
 
     def do_quit(self, line):
