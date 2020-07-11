@@ -69,7 +69,6 @@ class HBNBCommand(cmd.Cmd):
                     else:
                         update_line = (params[0] + ' ' +
                                        ' '.join(params[2]))
-                        print(update_line)
                         self.do_update(update_line)
 
     def do_quit(self, line):
