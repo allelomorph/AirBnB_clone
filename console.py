@@ -44,7 +44,6 @@ class HBNBCommand(cmd.Cmd):
                     params[2] = params[2].split(', ')
                 for i, arg in enumerate(params[2]):
                     params[2][i] = arg.strip('"')
-                print(params)
                 if params[1] == 'all':
                     self.do_all(params[0])
                 elif params[1] == 'count':
