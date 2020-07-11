@@ -23,27 +23,27 @@ class HBNBCommand(cmd.Cmd):
         class_dict[c.__name__] = c
 
     def default(self, line):
-        """Checks for <class>.<command>(<args>) syntax.
+        """ Check for <class>.<command>(<args>) syntax.
 
         <args> can be empty, <id> only, <id> <name> <value>, or <id> <dict>.
 
         """
         alt_syntax_cmds = {'all', 'count', 'show', 'destroy', 'update'}
-        syntax_re = ('^\w{4,9}\.\w{3,7}\((?:"\w{8}-\w{4}-\w{4}-\w{4}-\w{12}' +
-                     '")?(?:(?:, "\w+"){2}|(?:, \{.*\}))?\)$')
-        if re.fullmatch(syntax_re, line) is None:
+        if re.fullmatch('^\w{4,9}\.\w{3,7}\(.*\)$', line) is None:
             return
         for cmd in alt_syntax_cmds:
             if cmd in line:
+                # params tuple with ('<class>', '<cmd>', '(<args>)')
                 params = list(line.partition(cmd))
                 params[0] = params[0].strip('.')
-                # params tuple with ('<class>', '<cmd>', '(<args>)')
-                if len(params[2].strip('()')) != 0:
-                    # '(<args>)' becomes tuple of strings
-                    try:
-                        params[2] = eval(params[2])
-                    except:
-                        return
+                # '(<args>)' becomes list of strings
+                params[2] = params[2].strip('()')
+                if '{' in params[2] and '}' in params[2]:
+                    params[2] = params[2].split(', ', 1)
+                else:
+                    params[2] = params[2].split(', ')
+                for i, arg in enumerate(params[2]):
+                    params[2][i] = arg.strip('"')
                 if params[1] == 'all':
                     self.do_all(params[0])
                 elif params[1] == 'count':
@@ -53,12 +53,16 @@ class HBNBCommand(cmd.Cmd):
                         print(len([v for v in storage.all().values()
                                    if v.__class__.__name__ == params[0]]))
                 elif params[1] == 'show':
-                    self.do_show(' '.join((params[0], params[2])))
+                    self.do_show(params[0] + ' ' + ' '.join(params[2]))
                 elif params[1] == 'destroy':
-                    self.do_destroy(' '.join((params[0], params[2])))
+                    self.do_destroy(params[0] + ' ' + ' '.join(params[2]))
                 elif params[1] == 'update':
-                    if type(params[2][1]) == dict:
-                        for key, value in params[2][1].items():
+                    try:
+                        dict_arg = eval(params[2][1])
+                    except:
+                        return
+                    if type(dict_arg) == dict:
+                        for key, value in dict_arg.items():
                             # <class> <id> <attr name> <attr value>
                             update_line = ' '.join((params[0],
                                                     params[2][0],
