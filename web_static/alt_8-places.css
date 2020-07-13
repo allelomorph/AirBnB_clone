@@ -22,13 +22,14 @@ section.places article {
     margin: 20px;
     display: inline-block;
     vertical-align: top;
-    position: relative;
 }
 
-section.places h2 {
-    text-align: center;
+section.places div.listing_title {
+    text-align: right;
+}
+
+section.places div.listing_title h2 {
     font-size: 30px;
-    min-height: 55px;
 }
 
 section.places div.price_by_night {
@@ -42,9 +43,6 @@ section.places div.price_by_night {
     padding: 6px;
     margin: 12px 20px;
     display: inline-block;
-    position: absolute;
-    top: 0px;
-    right: 0px;
 }
 
 section.places div.information {
