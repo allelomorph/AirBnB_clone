@@ -6,13 +6,13 @@ The AirBnB project arc, part of Holberton School's [Higher-level Programming tra
   * [(263) 0x00. AirBnB clone - The console](./PROJECT_0x00.md)
   * [(268) 0x01. AirBnB clone - Web static](./PROJECT_0x01.md)
 * [`AirBnB_clone_v2`](https://github.com/allelomorph/AirBnB_clone_v2/)
-  * [(289) 0x02. AirBnB clone - MySQL](https://github.com/allelomorph/AirBnB_clone_v2/PROJECT_0x02.md)
-  * [(288) 0x03. AirBnB clone - Deploy static](https://github.com/allelomorph/AirBnB_clone_v2/PROJECT_0x03.md)
-  * [(290) 0x04. AirBnB clone - Web framework](https://github.com/allelomorph/AirBnB_clone_v2/PROJECT_0x04.md)
+  * [(289) 0x02. AirBnB clone - MySQL](https://github.com/allelomorph/AirBnB_clone_v2/blob/master/PROJECT_0x02.md)
+  * [(288) 0x03. AirBnB clone - Deploy static](https://github.com/allelomorph/AirBnB_clone_v2/blob/master/PROJECT_0x03.md)
+  * [(290) 0x04. AirBnB clone - Web framework](https://github.com/allelomorph/AirBnB_clone_v2/blob/master/PROJECT_0x04.md)
 * [`AirBnB_clone_v3`](https://github.com/allelomorph/AirBnB_clone_v3/)
-  * [(301) 0x05. AirBnB clone - RESTful API](https://github.com/allelomorph/AirBnB_clone_v3/PROJECT_0x05.md)
+  * [(301) 0x05. AirBnB clone - RESTful API](https://github.com/allelomorph/AirBnB_clone_v3/blob/master/PROJECT_0x05.md)
 * [`AirBnB_clone_v4`](https://github.com/allelomorph/AirBnB_clone_v4/)
-  * [(309) 0x06. AirBnB clone - Web dynamic](https://github.com/allelomorph/AirBnB_clone_v4/PROJECT_0x06.md)
+  * [(309) 0x06. AirBnB clone - Web dynamic](https://github.com/allelomorph/AirBnB_clone_v4/blob/master/PROJECT_0x06.md)
 
 What follows below is the original README submitted for grading.
 
